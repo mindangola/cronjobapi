@@ -1,14 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
  
 type ResponseData = {
   message: string
 }
  
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
-) {
+export async function GET(request: Request, res: Response) {
   console.log('Cron run on', new Date())
-  
-  res.status(200).json({ message: 'Hello from Next.js!' })
+
+  request.json()
 }
